@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>
+            Timetable
+        </title>
+        <script type="text/javascript" src="Timetable.js">
+        </script>
+
+    </head>
+    <body onload="fetchAllTrainer()">
+            <div>
+                <fieldset><legend>Add Trainer</legend>
+                    <input type="number" min="1" max="100" id="tId"  placeholder="ID"/>
+                    <input type="text" id="tName"  placeholder="Name"/>
+        </div>
+            <tr>
+                <td><input type="checkbox" name="skill" id="eng" onclick="checkbox()">eng</td><br></br>
+                <td><input type="checkbox" name="skill" id="maths" onclick="checkbox()">maths</td><br></br>
+                <td><input type="checkbox" name="skill" id="science" onclick="checkbox()">science</td><br></br>
+                <td><input type="checkbox" name="skill" id="social" onclick="checkbox()">social</td><br></br>
+                <td><input type="checkbox" name="skill" id="tamil" onclick="checkbox()">tamil</td></tr>
+<input type="button"  value="save" onclick="details()"/>
+<input type="button" value="refresh" onclick="fetchAllTrainer()"/> 
+            
+
+            </fieldset>
+            <div>
+            
+                            <fieldset><legend>Classes </legend>
+                                        <select id="searchBy" class="cls-input-spacing" onchange="searchClass()">
+                                        <option value="">-select-</option>
+                                        <option value="clsa">Class A</option>
+                                        <option value="clsb">Class B</option>
+                                    </select> </fieldset>           
+                     </div>
+                     <table id="Timetable">
+
+                            <thead>
+                
+                                <tr>
+                
+                                    <th>Id</th>
+                
+                                    <th>Name</th>
+                
+                                    <th>Email</th>
+                
+                                    <th>Designation</th>
+                
+                                </tr>
+                
+                            </thead>
+                
+                            <tbody id="trainer-details">
+                
+                
+                
+                            </tbody>
+                
+                        </table>
+                
+                     <div>
+                         <h>TIMETABLE</h>
+                
+                                <table border="2">
+                                        <tr>
+                                         <td>9:00-10:00
+                                         <td>10:00-11:00
+                                         <td>11:00-12:00
+                                        <td>12:00-2:00
+                                         <td>02:00-03:00
+                                    
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" name="eng" value="eng"></td><td>
+                                                <input type="text" name="maths" value="maths"></td><td>
+                                                <input type="text" name="science" value="science"></td><td>
+                                                <input type="text" name="lunch" value="lunch"></td>
+                                                <input type="text" name="chem" value="chem"></td>
+                                                <td><input type="text" name="phy" value="phy">
+
+                                            </td>
+                                            <input type="text" id="skills" name="skill"><br>
+                                            <input type="submit" value="skills">
+                                        </tr>
+                        
+                         </table>
+                     </div>
+                     <div id="trainer-details"></div>
+                    
+                    
+         </body>
+</html>
