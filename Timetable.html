@@ -10,8 +10,8 @@
     <body onload="fetchAllTrainer()">
             <div>
                 <fieldset><legend>Add Trainer</legend>
-                    <input type="number" min="1" max="100" id="tId"  placeholder="ID"/>
-                    <input type="text" id="tName"  placeholder="Name"/>
+                    <input type="number" min="1" max="100" id="id"  placeholder="ID"/>
+                    <input type="text" id="name"  placeholder="Name"/>
         </div>
             <tr>
                 <td><input type="checkbox" name="skill" id="eng" onclick="checkbox()">eng</td><br></br>
@@ -19,33 +19,42 @@
                 <td><input type="checkbox" name="skill" id="science" onclick="checkbox()">science</td><br></br>
                 <td><input type="checkbox" name="skill" id="social" onclick="checkbox()">social</td><br></br>
                 <td><input type="checkbox" name="skill" id="tamil" onclick="checkbox()">tamil</td></tr>
-<input type="button"  value="save" onclick="details()"/>
-<input type="button" value="refresh" onclick="fetchAllTrainer()"/> 
-            
+<input type="button"  value="save" onClick="save()"/>
+<input type="button" value="refresh" onClick="fetchAllTrainer()"/> 
+<input type="text" id="skills" name="skill"><br>
+<input type="submit" value="skills">
+
 
             </fieldset>
             <div>
             
                             <fieldset><legend>Classes </legend>
-                                        <select id="searchBy" class="cls-input-spacing" onchange="searchClass()">
+                                        <select id="searchBy"  onchange="searchClass()">
                                         <option value="">-select-</option>
                                         <option value="clsa">Class A</option>
                                         <option value="clsb">Class B</option>
-                                    </select> </fieldset>           
+                                        </select>
+                                        <select id="searchBy" onchange="searchSlot()">
+                                                <option value="">-select-</option>
+                                                <option value="slot1">slot1</option>
+                                                <option value="slot2">slot2</option>
+                                                
+                                        </select>
+                                 </fieldset>           
                      </div>
-                     <table id="Timetable">
+                     <table>
 
                             <thead>
                 
                                 <tr>
                 
-                                    <th>Id</th>
+                                    <th>id</th>
                 
-                                    <th>Name</th>
+                                    <th>name</th>
                 
-                                    <th>Email</th>
+                                    <th>email</th>
                 
-                                    <th>Designation</th>
+                
                 
                                 </tr>
                 
@@ -69,21 +78,20 @@
                                          <td>11:00-12:00
                                         <td>12:00-2:00
                                          <td>02:00-03:00
-                                    
+                                             <td>3:00-4:00
                                         </tr>
                                         <tr>
                                             <td>
                                                 <input type="text" name="eng" value="eng"></td><td>
                                                 <input type="text" name="maths" value="maths"></td><td>
                                                 <input type="text" name="science" value="science"></td><td>
-                                                <input type="text" name="lunch" value="lunch"></td>
-                                                <input type="text" name="chem" value="chem"></td>
-                                                <td><input type="text" name="phy" value="phy">
+                                                    <input type="text" name="lunch" value="lunch"></td><td>
+                                                <input type="text" name="phy" value="phy"></td><td>
+                                                <input type="text" name="chem" value="chem">
+            
 
                                             </td>
-                                            <input type="text" id="skills" name="skill"><br>
-                                            <input type="submit" value="skills">
-                                        </tr>
+                                             </tr>
                         
                          </table>
                      </div>

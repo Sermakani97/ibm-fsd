@@ -10,15 +10,17 @@ if(checkbox[i].checked)
 }}
 document.getElementById("skills").value=checkboxcheck;
 }
-const details=()=>
+const save=()=>
 {
     const trainer=new Timetable();
-    trainer._add();
     trainer.setup(
         document.getElementById('id').value,
            document.getElementById('name').value,
-
-    document.getElementById('sub').value);
+           document.getElementById('skills').value
+           );
+           trainer._add();
+    
+           
 fetchAllTrainer();
 }
 const fetchAllTrainer = ()=>{
@@ -34,7 +36,7 @@ const fetchAllTrainer = ()=>{
 
 }
 
-const searchTrainer = () =>{
+const searchClass = () =>{
 
     const trainer = new Timetable();
 
@@ -47,6 +49,21 @@ const searchTrainer = () =>{
     buildTable(table);
 
 }
+const searchSlot = () =>{
+
+    const trainer = new Timetable();
+
+    const table= trainer._filter1(
+
+                        document.getElementById('searchBy').value
+
+                    );
+
+    buildTable(table);
+
+}
+
+
 const editTrainer=()=>
 {
     const trainer=new Timetable();
@@ -85,11 +102,11 @@ class Timetable {
     id
     name
     sub
-    setup(id,name,sub){
+    setup(id,name,skills){
 
         this.id=id;
         this.name = name
-            this.sub = sub
+            this.skills= skills
     }
 
 
@@ -112,7 +129,7 @@ _all(){
 
 _filter(searchBy){
 
-    let table= [];
+    let tr= [];
 
     // fill up Array
 
@@ -139,6 +156,36 @@ _filter(searchBy){
     return tr;
 
 }
+_filter1(searchBy){
+
+    let tr= [];
+
+    // fill up Array
+
+        if(searchBy == 'slot A'){
+
+                Object.keys(localStorage).forEach((e)=>{
+
+                    const _trainer = JSON.parse(localStorage.getItem(e));
+                    const _sub=JSON.parse(localStorage.getItem(e));
+                });
+
+            }
+
+            else if( searchBy == 'slot B'){
+
+                    Object.keys(localStorage).forEach((e)=>{
+
+                        const _trainer = JSON.parse(localStorage.getItem(e));
+                        const _sub=JSON.parse(localStorage.getItem(e));
+                   });
+
+        }
+
+    return tr;
+
+}
+
 
 _add(){
     
@@ -148,5 +195,8 @@ _add(){
 
         sub : this.sub
     }));
+}
+_edit(){
+    return JSON.parse(localStorage.getItem());
 }
 }
