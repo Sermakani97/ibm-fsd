@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>
+    </title>
+    <script type="text/javascript">
+        const search = () => {
+            const _url = 'http://localhost:1269/prdt';
+            fetch(_url, {})
+                .then(res => res.json())
+                .then(prdt => {
+                    createprdt(prdt);
+                })
+        }
+        const createprdt = (data) => {
+            const pname = document.getElementById('pname');
+            let rows = '';
+            data.prdt.forEach((pname) => {
+                rows += `<option value=${pname.name}> ${pname.name} </option> `
+            });
+            pname.innerHTML = rows;
+        }
+        const add = () => {
+            pname = document.getElementById('pname').value;
+            const baseUrl = 'http://localhost:1269/prdt';
+            fetch(baseUrl, {})
+                .then(response => response.json())
+                .then(data => {
+                    createTable(data);
+                });
+        }
+        const createTable = (data) => {
+            let rows = '';
+            data.prdt.forEach(u => {
+                rows += `<tr>                 
+                            <td>${u.name}</td>
+                            <td>${u.item}</td>
+                            <td>${u.qnty}</td>
+                            <td>${u.price}</td>
+                        </tr>`
+            });
+            const _table = `<table>
+                                <tr>
+                                     <th>Name</th>
+                                    <th>ITEM</th>
+                                    <th>QNTY</th>
+                                <th>PRICE</th>
+                                </tr>
+                                ${rows}
+                            </table>`
+            document.getElementById('prdt').innerHTML = _table;
+        }
+        const cart = () => {
+            const _url = 'http://localhost:1269/cart';
+            fetch(_url, {})
+                .then(res => res.json())
+                .then(items => {
+                    createcart(items);
+                    totalcal(items);
+                })
+        }
+        const totalcal = (data) => {
+            let sum;
+            data.cart.forEach((u) => {});
+            document.getElementById('total').value = parseInt(sum);
+        }
+        const createcart = (data) => {
+            let rows = '';
+            data.cart.forEach((u) => {
+                total = parseInt(u.price * u.quantity);
+                rows += `<tr>
+                            <td>${u.id}</td>
+                            <td>${u.name}</td>
+                            <td>${u.price}</td>
+                            <td><button onclick="add1(${u.price})">+</button>${u.quantity}<button onclick="sub1(${u.price})">-</button></td>
+                            <td>${total}</td>
+                        </tr>`
+            });
+        }
+    </script>
+</head>
+
+<body onload="search()">
+    <select id="pname">
+            <option ></option></select>
+    <input type="button" id="search" onclick="add()" value="add" />
+    <input type="button" id="cart" value="cart" onclick="cart()" />
+    <input type="button" id="mail" value="checkout" />
+    <div id="prdt">
+    </div>
+</body>
+
+</html>
