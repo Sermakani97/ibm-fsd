@@ -35,7 +35,18 @@
                 rows += `<tr>                 
                             <td>${u.name}</td>
                             <td>${u.item}</td>
-                            <td>${u.qnty}</td>
+                            <td>
+                                <select id="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>    
+                            </td>
                             <td>${u.price}</td>
                         </tr>`
             });
@@ -54,14 +65,16 @@
             const _url = 'http://localhost:1269/cart';
             fetch(_url, {})
                 .then(res => res.json())
-                .then(items => {
-                    createcart(items);
-                    totalcal(items);
+                .then(cart => {
+                    createcart(cart);
+                    totalcal(cart);
                 })
         }
         const totalcal = (data) => {
             let sum;
-            data.cart.forEach((u) => {});
+            data.cart.forEach((u) => {
+                parseInt(sum) += parseInt(u.price);
+            });
             document.getElementById('total').value = parseInt(sum);
         }
         const createcart = (data) => {
@@ -76,6 +89,31 @@
                             <td>${total}</td>
                         </tr>`
             });
+            const add1 = (data) => {
+                parseInt(data) += 1;
+                const baseUrl = 'http://localhost:1269/cart';
+                fetch(baseUrl, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        quantity: quantity
+                    })
+                })
+            }
+            const _table = `<table>
+                                <tr>
+                                    <th>id</th>
+                                    <th>NAME</th>
+                                    <th>price</th>
+                                    <th>quantity</th>
+                                    <th>total</th>
+                                </tr>
+                                ${rows}
+                            </table>`
+
+            document.getElementById('cart').innerHTML = _table;
         }
     </script>
 </head>
@@ -88,6 +126,11 @@
     <input type="button" id="mail" value="checkout" />
     <div id="prdt">
     </div>
+    <div>
+        <a href="buy.html" id="next" style="margin-left: 50px;"><img src="next_button.jpg" width="30px" height="30px">
+            <Next/img>
+        </a>
+    </div>>
 </body>
 
 </html>

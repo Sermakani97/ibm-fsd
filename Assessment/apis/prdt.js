@@ -19,12 +19,4 @@ server.post('/add', (req, res) => {
     }));
 });
 
-/*server.get('/nextId', (req, res) => {
-    setContentHeader(res);
-    res.end(
-        JSON.stringify({
-            nextId: prdtService._nextId()
-        })
-    );
-})*/
 module.exports.userRoutes = server;

@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>
+        Users Page
+    </title>
+    <style>
+        #users {
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        const getProd = () => {
+            const _url = 'http://localhost:1269/prdt';
+            fetch(_url, {})
+                .then(res => res.json())
+                .then(prdt => {
+                    createTable(prdt);
+                })
+        }
+        const createTable = (data) => {
+            let rows = '';
+            data.prdt.forEach(u => {
+                rows += `<tr>
+                    <td><img src="${u.prdt_img}" width="50px" height="50px" id="val"></img></td>
+                            <td>${u.prdt_name}</td>
+                            <td>${u.prdt_price}</td>
+                            <td>
+                                <select id="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>    
+                            </td>
+                            <td><button onclick="add('${u.prdt_name} ',' ${u.prdt_price}')">Add to Cart</button>
+                        </tr>`
+            });
+            const _table = `<table>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                </tr>
+                                ${rows}
+                            </table>`
+            document.getElementById('prdt').innerHTML = _table;
+        }
+        const add = (name, price) => {
+            let quantity = document.getElementById('quantity').value;
+            let c_url = 'http://localhost:1269/cart/';
+            fetch(c_url + '/add', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    price: parseInt(price),
+                    quantity: quantity
+                })
+            })
+        }
+    </script>
+    <style>
+        table,
+        th,
+        td {
+            border-spacing: 10px;
+            border-collapse: separate;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            font-size: 25px;
+        }
+        
+        td {
+            font-size: 20px;
+        }
+        
+        body {
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body onload="getProd()">
+    <h1 style="margin-left: 25px;">ORDER PRODUCTS</h1>
+    <fieldset>
+        <legend align="right" style="margin-left: 25px;">
+            <a href="cart.html"><img src="cartimg.png" width="25px" height="25px" id="val"></img>
+            </a>
+        </legend>
+        <div id="prdt">
+
+        </div>
+    </fieldset>
+
+</body>
+
+</html>

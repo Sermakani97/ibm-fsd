@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Cart Page</title>
+    <script>
+        const getCart = () => {
+            const _url = 'http://localhost:1269/cart';
+            fetch(_url, {})
+                .then(res => res.json())
+                .then(cart => {
+                    createTable(cart);
+                })
+        }
+        const createTable = (data) => {
+            let rows = '';
+            let sum = 0;
+            data.cart.forEach(u => {
+                total = u.price * u.quantity;
+                sum = sum + total;
+                rows += `<tr>
+                            <td>${u.name}</td>
+                            <td>${u.price}</td>
+                            <td>${u.quantity}</td>
+                            <td><b>${total}</b></td>
+                        </tr>`
+            });
+            const _table = `<table>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                                ${rows}
+                            </table></br>`;
+
+            document.getElementById('total').value = sum;
+            document.getElementById('cart_div').innerHTML = _table;
+        }
+    </script>
+    <style>
+        #total {
+            border: none;
+            font-size: 25px;
+        }
+        
+        table,
+        th,
+        td {
+            border-spacing: 10px;
+            border-collapse: separate;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            font-size: 25px;
+        }
+        
+        td {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body onload="getCart()">
+    <h1 style="margin-left: 25px; color:blueviolet;">Buy Products</h1>
+    <div id="cart_div">
+
+    </div>
+    <h2 style="margin-left: 50px;">Total :<input type="text" id="total" />
+        <!-- <a href="users.html" id="previous"><img src="previous.jpg" width="30px" height="30px"></img></a> -->
+        <a href="buy.html" id="next" style="margin-left: 50px;"><img src="next_button.jpg" width="30px" height="30px">
+            <Next/img>
+        </a>
+    </h2>
+</body>
+
+</html>
