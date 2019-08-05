@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Hello | Bootstrap
+    </title>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            margin-left: 10px;
+            border: 1px;
+            color: black
+        }
+        
+        h3 {
+            margin-left: 10px;
+            border: 1px;
+            color: black
+        }
+        
+        #body_style {
+            margin-left: 25px;
+        }
+    </style>
+</head>
+
+<body id="body_style">
+    <div class="row">
+        <h1>Personal Information</h1>
+    </div>
+    <div class="row">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="first name.." />
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="last name.." />
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+        <h3>Your Gender</h3>
+    </div>
+    <div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" value="M" class="form-check-input" />
+            <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" value="F" class="form-check-input" />
+            <label class="form-check-label">Female</label>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+        <h3>Email Address</h3>
+    </div>
+    <div class="row">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Email.." />
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+        <h3>Contact Number</h3>
+    </div>
+    <div class="row">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Number.." />
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+        <h3>ADDRESS</h3>
+    </div>
+    <div class="row">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Address.." />
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="row">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="city/district/town.." />
+            </div>
+            <div class="col">
+                <input type="number" class="form-control" placeholder="pincode.." />
+            </div>
+            <div class="col">
+                <select>
+                    <option value="andra Pradesh"> Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">   Arunachal Pradesh</option>
+                    <option value="Bihar">  Bihar</option>
+                    <option value="Chatisgarh">  Chatisgarh</option>
+                   <option value="Delhi">   Delhi</option>
+                   <option value="Goa">   Goa</option>
+                    <option value="Haryana">   Haryana</option>
+                     <option value="jammu and Kashmir">  Jammu and Kashmir</option>
+                     <option value="karnataka"> karnataka</option>
+                    <option value="kerala"> kerala</option>
+                   <option value="Maharashtra">  Maharashtra</option>
+                    <option value="Nagaland">  Nagaland</option>
+                   <option value="Tamil Nadu">  Tamil Nadu</option>
+                 <option value="west Bengal">  West Bengal</option>
+                 </select>
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="form-group">
+        <input type="button" value="SAVE" onclick="save()" />
+    </div>
+</body>
+
+</html>
