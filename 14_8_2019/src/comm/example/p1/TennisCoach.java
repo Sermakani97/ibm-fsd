@@ -6,7 +6,7 @@ public class TennisCoach implements Coach {
 public TennisCoach()
 {
 	super();
-	}
+}
 
 public String getDailyWorkout()
 {
