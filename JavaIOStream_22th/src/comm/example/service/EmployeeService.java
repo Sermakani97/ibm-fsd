@@ -1,0 +1,12 @@
+package comm.example.service;
+import java.util.List;
+
+import model.Employee;
+
+public interface EmployeeService {
+	public void createEmployee(Employee employee);
+	public void deleteEmployee(Employee employee);
+	public List<Employee> getAllEmployees();
+	public Employee getEmployeeById(int id);
+
+}
