@@ -1,6 +1,7 @@
 package comm.exam;
 
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Set;
@@ -60,7 +61,7 @@ public static void main(String[] args)
     switch(choice)
     {
     case 1:
-    	//Collection.sort(list);
+    	//Collections.sort(list);
     	for(Employee e:list)
     {
     	System.out.println("Employee ID Name Department Date Of Joining Age Salary");
