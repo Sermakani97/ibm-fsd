@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Customer {
 	@Id
@@ -19,9 +23,10 @@ private String name;
 private String email;
 private String password;
 private String customerId;
+
 @ManyToMany
 @JoinTable(name = "customer_product", joinColumns = @JoinColumn(name = "customer_id"),inverseJoinColumns = @JoinColumn(name = "product_id"))
-private Set<Product> products = new HashSet<>();
+private List<Product> products = new ArrayList<>();
 
 
 public Customer() {
@@ -29,21 +34,33 @@ public Customer() {
 	// TODO Auto-generated constructor stub
 }
 
-public Customer(String name, String email, String password) {
-	super();
-	this.name = name;
-	this.email = email;
-	this.password = password;
+
+public List<Product> getProducts() {
+	return products;
 }
 
-public Customer(String name, String email, String password,String customerId) {
+
+public Customer(String name, String email, String password, String customerId, List<Product> products) {
 	super();
 	this.name = name;
 	this.email = email;
 	this.password = password;
-	this.customerId=customerId;
-	
+	this.customerId = customerId;
+	this.products = products;
 }
+
+public Customer(String name, String email, String password, List<Product> products) {
+	super();
+	this.name = name;
+	this.email = email;
+	this.password = password;
+	this.products = products;
+}
+
+public void setProducts(List<Product> products) {
+	this.products = products;
+}
+
 public Long getId() {
 	return id;
 }
@@ -67,12 +84,6 @@ public String getPassword() {
 }
 public void setPassword(String password) {
 	this.password = password;
-}
-public Set<Product> getProducts() {
-	return products;
-}
-public void setProducts(Set<Product> products) {
-	this.products = products;
 }
 public String getCustomerId() {
 	return customerId;

@@ -18,15 +18,15 @@ private String name;
 private String email;
 private String password;
 private String location;
-@OneToMany(mappedBy="seller" ,cascade = CascadeType.ALL)
-private Set<Product> products;
-
-public Set<Product> getProducts() {
-	return products;
-}
-public void setProducts(Set<Product> products) {
-	this.products = products;
-}
+//@OneToMany(mappedBy="seller" ,cascade = CascadeType.ALL)
+//private Set<Product> products;
+//
+//public Set<Product> getProducts() {
+//	return products;
+//}
+//public void setProducts(Set<Product> products) {
+//	this.products = products;
+//}
 public Seller()
 {
 	super();

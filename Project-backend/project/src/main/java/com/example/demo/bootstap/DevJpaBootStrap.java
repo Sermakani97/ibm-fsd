@@ -1,4 +1,6 @@
 package com.example.demo.bootstap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.context.ApplicationListener;
@@ -37,23 +39,25 @@ public DevJpaBootStrap(CustomerRepository customerRepository, ProductRepository 
 	}
 	private void init() {
 		// TODO Auto-generated method stub
-		Customer cus = new Customer("vetri","ser@gg.com","vetri");
-		cus.setCustomerId(UUID.randomUUID().toString());
-		Customer cus1=new Customer(cus.getName(),cus.getEmail(),cus.getPassword(),cus.getCustomerId());
-
+		List<Product>p=new ArrayList<>();
 		Product prod = new Product("TV",30000,1,"Samsung");
-		Category cat=new Category("Electronics","aaa");
-		Seller sel=new Seller("saras","sar@gg.com","saras","chennai");
+		p.add(prod);
+		Customer cus = new Customer("vetri","ser@gg.com","vetri",p);
+		cus.setCustomerId(UUID.randomUUID().toString());
+		Customer cus1=new Customer(cus.getName(),cus.getEmail(),cus.getPassword(),cus.getCustomerId(),cus.getProducts());
+
+//		Category cat=new Category("Electronics","aaa");
+//		Seller sel=new Seller("saras","sar@gg.com","saras","chennai");
+		prod.getCustomers().add(cus);
+		cus.getProducts().add(prod);
 		productRepository.save(prod);
 		customerRepository.save(cus);
 		customerRepository.save(cus1);
-		categoryRepository.save(cat);
-		sellerRepository.save(sel);
-		prod.getCustomers().add(cus);
-		cus.getProducts().add(prod);
-//		cat.getProducts().add(prod);
+//		categoryRepository.save(cat);
+//		sellerRepository.save(sel);
+		//	cat.getProducts().add(prod);
 //		sel.getProducts().add(prod);
-//	
+	
 		
 	}
 

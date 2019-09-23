@@ -12,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Product {
 	@Id
@@ -21,32 +23,40 @@ public class Product {
 	private double price;
 	private int qnty;
 	private String model;
-	@ManyToOne
-	@JoinTable(name="product_category",joinColumns= @JoinColumn(name = "category_id"),inverseJoinColumns = @JoinColumn(name = "product_id"))
-	private Category category;
-	@ManyToOne
-	@JoinTable(name="product_seller",joinColumns= @JoinColumn(name = "seller_id"),inverseJoinColumns = @JoinColumn(name = "product_id"))
-	private Seller seller;
-	public Seller getSeller() {
-		return seller;
-	}
-	public void setSeller(Seller seller) {
-		this.seller = seller;
-	}
+//	@ManyToOne
+//	@JoinTable(name="product_category",joinColumns= @JoinColumn(name = "category_id"),inverseJoinColumns = @JoinColumn(name = "product_id"))
+//	private Category category;
+//	@ManyToOne
+//	@JoinTable(name="product_seller",joinColumns= @JoinColumn(name = "seller_id"),inverseJoinColumns = @JoinColumn(name = "product_id"))
+//	private Seller seller;
+//	public Seller getSeller() {
+//		return seller;
+//	}
+//	public void setSeller(Seller seller) {
+//		this.seller = seller;
+//	}
+	@JsonIgnore
 	@ManyToMany(mappedBy="products")
 	private Set<Customer> customers = new HashSet<>();
+	
+	public Set<Customer> getCustomers() {
+		return customers;
+	}
+	public void setCustomers(Set<Customer> customers) {
+		this.customers = customers;
+	}
 	public Product() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+//	public Category getCategory() {
+//		return category;
+//	}
+//
+//	public void setCategory(Category category) {
+//		this.category = category;
+//	}
 
 	public Product(String name, double price, int qnty, String model) {
 		super();
@@ -85,11 +95,6 @@ public class Product {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public Set<Customer> getCustomers() {
-		return customers;
-	}
-	public void setCustomers(Set<Customer> customers) {
-		this.customers = customers;
-	}
+	
 	
 }
