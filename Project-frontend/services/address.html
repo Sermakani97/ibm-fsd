@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Hello | Bootstrap
+    </title>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <style>
+        h1 {
+            margin-left: 10px;
+            border: 1px;
+            color: black
+        }
+        
+        h3 {
+            margin-left: 10px;
+            border: 1px;
+            color: black
+        }
+        
+        #body_style {
+            margin-left: 25px;
+        }
+    </style>
+</head>
+
+<body id="body_style">
+    </br>
+    </br>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+
+                <body id="card_body" style=" margin: 25px; ">
+                    <div class="card " style="width: 50rem; height: 40rem; ">
+                        <div class="card-body " align="center ">
+
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="profile.jpg " height="15 " width="15 ">ACCOUNT SETTING
+                                    <a href="profile1.html" class="nav-link"> Profile Information</a>
+                                    <a href="address.html" class="nav-link">Manage Address</a>
+                                    <a href="pancard.html" class="nav-link">Pancard Information</a>
+                                </li>
+                            </ul>
+                            </br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="orders.jpg" height="15 " width="15 ">MY ORDER
+                                    <a href="order.html" class="nav-link"> Orders</a>
+                                </li>
+                            </ul>
+                            </br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="payment.jpg" height="15 " width="15 ">PAYMENT
+                                    <a href="payment.html" class="nav-link">Saved drafts</a>
+                                </li>
+                            </ul>
+                            </br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="rewards.jpg" height="15 " width="15 ">REWARDS
+                                    <a href="rewards.html" class="nav-link">Rewards</a>
+                                </li>
+                            </ul>
+                            </br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="notification.jpg" height="15 " width="15 ">NOTIFICATION
+                                    <a href="notification.html" class="nav-link">All Notification</a>
+                                </li>
+                            </ul>
+                            </br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="logout.jpg" height="15 " width="15 ">LOGOUT
+                                    <a href="logout.html" class="nav-link">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="col">
+
+                <body id="card_body" style=" margin: 35px; ">
+                    <div class="card " style="width: 50rem; height: 40rem; ">
+                        </br>
+                        </br>
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-auto">
+
+                                <div class="row">
+                                    <h3>ADDRESS</h3>
+                                </div>
+                                </br>
+                                <div class="card-body " align="center ">
+                                    <div class="row">
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="Address.." />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </br>
+                                    <div class="row">
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <input type="text" class="form-control" placeholder="city/district/town.." />
+                                            </div>
+                                            <div class="col">
+                                                <input type="number" class="form-control" placeholder="pincode.." />
+                                            </div>
+                                            <div class="col">
+                                                <select>
+                            <option value="andra Pradesh"> Andhra Pradesh</option>
+                          <option value="Arunachal Pradesh">   Arunachal Pradesh</option>
+                            <option value="Bihar">  Bihar</option>
+                            <option value="Chatisgarh">  Chatisgarh</option>
+                           <option value="Delhi">   Delhi</option>
+                           <option value="Goa">   Goa</option>
+                            <option value="Haryana">   Haryana</option>
+                             <option value="jammu and Kashmir">  Jammu and Kashmir</option>
+                             <option value="karnataka"> karnataka</option>
+                            <option value="kerala"> kerala</option>
+                           <option value="Maharashtra">  Maharashtra</option>
+                            <option value="Nagaland">  Nagaland</option>
+                           <option value="Tamil Nadu">  Tamil Nadu</option>
+                         <option value="west Bengal">  West Bengal</option>
+                         </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </br>
+                                    <div class="form-group">
+                                        <input type="button" class="btn btn-primary" value="SAVE" onclick="save()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </body>
+
+</html>
