@@ -1,70 +1,24 @@
-<!-- <div>
-
-    <div>
-        <div class="row justify-content-md-center">
-            <div class="col-md-auto">
-
-        
-                    <div class="card " style="width: 50rem; height: 40rem; ">
-                        <div class="card-body " align="center ">
-                            <img class="card-img-bottom " src="noorder.jpg ">
-                            <p class="card-text ">You have no order</p>
-                            <a href="# " class="btn btn-primary ">SHOP NOW</a>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- <body id="body_style">
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                    <div class="card " style="width: 50rem; height: 40rem; ">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item active">
-                                    <img src="profile.jpg " height="15 " width="15 ">ACCOUNT SETTING
-                                    <a href="profile1.html" class="nav-link"> Profile Information</a>
-                                    <a href="address.html" class="nav-link">Manage Address</a>
-                                    <a href="pancard.html" class="nav-link">Pancard Information</a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item active">
-                                    <img src="orders.jpg" height="15 " width="15 ">MY ORDER
-                                    <a href="order.html" class="nav-link"> Orders</a>
-                                </li>
-                            </ul>
-                           
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item active">
-                                    <img src="payment.jpg" height="15 " width="15 ">PAYMENT
-                                    <a href="payment.html" class="nav-link">Saved drafts</a>
-                                </li>
-                            </ul>
-                           
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item active">
-                                    <img src="rewards.jpg" height="15 " width="15 ">REWARDS
-                                    <a href="rewards.html" class="nav-link">Rewards</a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item active">
-                                    <img src="notification.jpg" height="15 " width="15 ">NOTIFICATION
-                                    <a href="notification.html" class="nav-link">All Notification</a>
-                                </li>
-                            </ul>
-                           
-
-                        </div>
-                    </div>
-            </div>
-            </div>
-            </body>  -->
             <div class="container">
+                    <div class="row "style=" margin-left: 900px;">
+                            <div class="col-md-auto">
+                                <div class="dropdown">
+                                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  MY ACCOUNT
+                                </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item " [routerLink]="['/home/profile/']"><img class="card-img-center" src="assets/profile.jpg " height="15 " width="15 ">Profile</a> 
+                                            <a class="dropdown-item " [routerLink]="['/home/order/']"><img  src="assets/orders.jpg " height="15 " width="15 ">Orders</a> 
+                                            <a class="dropdown-item " [routerLink]="['/home/payment/']"><img src="assets/payment.jpg " height="15 " width="15 ">Payment</a> 
+                                            <a class="dropdown-item " [routerLink]="['/home/reward/']"><img src="assets/rewards.jpg " height="15 " width="15 ">Reward</a> 
+                                            <a class="dropdown-item " [routerLink]="['/home/notification/']"><img src="assets/notification.jpg " height="15 " width="15 ">Notification</a> 
+                                            <a class="dropdown-item " [routerLink]="['/home/logout/']"><img src="assets/logout.jpg " height="15 " width="15 ">Logout</a> 
+            
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
             <div class="row">
                 <br>
             <div class="col-3">
