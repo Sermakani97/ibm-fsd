@@ -1,0 +1,160 @@
+<body>
+        <div class="container">
+                <div class="row "style=" margin-left: 900px;">
+                        <div class="col-md-auto">
+                            <div class="dropdown">
+                                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              MY ACCOUNT
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item " [routerLink]="['/home/profile/']"><img class="card-img-center" src="assets/profile.jpg " height="15 " width="15 ">Profile</a> 
+                                        <a class="dropdown-item " [routerLink]="['/home/order/']"><img  src="assets/orders.jpg " height="15 " width="15 ">Orders</a> 
+                                        <a class="dropdown-item " [routerLink]="['/home/payment/']"><img src="assets/payment.jpg " height="15 " width="15 ">Payment</a> 
+                                        <a class="dropdown-item " [routerLink]="['/home/reward/']"><img src="assets/rewards.jpg " height="15 " width="15 ">Reward</a> 
+                                        <a class="dropdown-item " [routerLink]="['/home/notification/']"><img src="assets/notification.jpg " height="15 " width="15 ">Notification</a> 
+                                        <a class="dropdown-item " [routerLink]="['/home/logout/']"><img src="assets/logout.jpg " height="15 " width="15 ">Logout</a> 
+        
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        <div class="row">
+            <div class="col-2">
+                    <body id="card_body" style=" margin: 30px; ">
+                        
+                            <div class="card" style="width: 40rem; height: 40rem; ">
+                                                        
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <br>
+                                    <br>
+                                    
+                                    <img src="assets/profile.jpg " height="15 " width="15 "style=" margin-left: 15px;">ACCOUNT SETTING
+                                    <br>
+                                    
+                                    <a [routerLink]="['/home/profile/']" class="nav-link"style=" margin-left: 30px;"> Profile Information</a>
+                                    <a [routerLink]="['/home/address/']" class="nav-link"style=" margin-left: 30px;">Manage Address</a>
+                                    <a [routerLink]="['/home/pancard/']" class="nav-link"style=" margin-left: 30px;">Pancard Information</a>
+                                    <br>
+                                </li>
+                            </ul>
+                        <br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="assets/orders.jpg" height="15 " width="15 "style=" margin-left: 15px;">MY ORDER
+                                    <a [routerLink]="['/home/order/']" class="nav-link"style=" margin-left: 30px;"> Orders</a>
+                                    <br>
+                                </li>
+                            </ul>
+                        <br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="assets/payment.jpg" height="15 " width="15 "style=" margin-left: 15px;">PAYMENT
+                                    <a [routerLink]="['/home/payment/']" class="nav-link"style=" margin-left: 30px;">Saved drafts</a>
+                                    <br>
+                                </li>
+                            </ul>
+                            <br>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                    <img src="assets/rewards.jpg" height="15 " width="15 "style=" margin-left: 15px;">REWARDS
+                                    <a [routerLink]="['/home/reward/']" class="nav-link"style=" margin-left: 30px;">Rewards</a>
+                                    <br>
+                                </li>
+                            </ul>
+                            
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item active">
+                                
+                                    <img src="assets/notification.jpg" height="15 " width="15 "style=" margin-left: 15px;">NOTIFICATION
+                                    <a [routerLink]="['/home/notification/']" class="nav-link"style=" margin-left: 30px;">All Notification</a>
+                                
+                                </li>
+                            </ul>
+                        
+                        
+                </div>
+                </body>
+            </div>
+            
+    <div class="col-1">
+            <body id="card_body" style=" margin: 30px; ">
+                        
+                    <div class="card" style="width: 40rem; height: 40rem; ">
+                            <div class="card-body " align="center ">
+        
+                      <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <br>
+                        <div class="row justify-content-md-center">
+                            <h3>ADDRESS</h3>
+                        </div>
+                        <br>
+                        <div class="card-body " align="center ">
+                            <div class="row">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="Address.." />
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="form-row">
+                                
+                                    <div class="col">
+                                        <input type="text" class="form-control" placeholder="city/district/town.." />
+                                    </div>
+                                    
+                                    <div class="col">
+                                        <input type="number" class="form-control" placeholder="pincode.." />
+                                    </div>
+                                    <div class="col">
+                                        <select>
+                    <option value="andra Pradesh"> Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">   Arunachal Pradesh</option>
+                    <option value="Bihar">  Bihar</option>
+                    <option value="Chatisgarh">  Chatisgarh</option>
+                   <option value="Delhi">   Delhi</option>
+                   <option value="Goa">   Goa</option>
+                    <option value="Haryana">   Haryana</option>
+                     <option value="jammu and Kashmir">  Jammu and Kashmir</option>
+                     <option value="karnataka"> karnataka</option>
+                    <option value="kerala"> kerala</option>
+                   <option value="Maharashtra">  Maharashtra</option>
+                    <option value="Nagaland">  Nagaland</option>
+                   <option value="Tamil Nadu">  Tamil Nadu</option>
+                 <option value="west Bengal">  West Bengal</option>
+                 </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="form-group">
+                                <input type="button" class="btn btn-primary" value="SAVE" onclick="save()" />
+                            </div>
+                        </div>
+                    
+            
+                    </div>
+                </div>
+
+                </div>
+
+            </div>
+
+
+</body>
+
+
+</div>
+                    </div>
+                
+                </div>
+    </body>
+
+
